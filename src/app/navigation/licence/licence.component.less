@@ -1,0 +1,40 @@
+* {
+    display: flex;
+    justify-content: center;
+}
+
+.license {
+    font-size: 0.6em;
+    border: 1px solid gray;
+}
+
+a {
+    color: black;
+    font-size: 1em;
+}
+
+/* прижать bottomNavbar к низу */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    min-height: 100%;
+    position: relative;
+}
+
+.content {
+    padding-bottom: 100px;
+}
+
+.license {
+    display: block;
+    width: 100%;
+    position: absolute;
+    // bottom: 0;
+    bottom: 0%;
+    padding: 2px;
+    background: white;
+}
+
+/* /прижать меню к низу */

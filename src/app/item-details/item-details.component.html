@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="content">
+    <h3>{{item.name}}</h3>
+    <div class="item">
+      <div class="parent_img">
+        <img src="{{ item.url }}" class="item-details__img">
+      </div>
+      <div class="item-details__descr">
+          <span> id: {{item.id}} </span> <br>
+          {{item.text}} <br><br>
+          {{item.price}} &#8381;<br>
+      </div>
+    </div>
+
+
+    <h4>Кэшбэк за покупку <span class="green">{{item.cashback}} %</span></h4>
+    <div class="cashback">
+      <div class="cashback__left">
+        QR-код <br><span>1%</span>
+      </div>
+      <div class="cashback__center">
+        +
+      </div>
+      <div class="cashback__right">
+        <span>{{item.cashback - 1 }}%</span> за подтверждение покупки операцией из банка
+      </div>
+    </div>
+
+    <div class='loginBtnParent' *ngIf='!isAuthorized'>
+      <div class="warning">
+        <span><i class="material-icons">info</i></span>
+        Авторизуйтесь, чтобы получить кэшбэк!
+      </div>
+      <button routerLink="/login" mat-flat-button class="loginBtn">Войти в систему</button>
+    </div>
+
+    <b>Условия получения кэшбэка</b>
+    <div class="conditions">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque aut error numquam
+      quidem quasi expedita
+      accusamus consequatur quia ducimus magni, eaque ex asperiores sint sapiente magnam assumenda explicabo
+      blanditiis!</div>
+    <a href="https://www.rsb.ru/" target="_blank">Все условия</a>
+    <br>
+
+    <app-btn-go-back></app-btn-go-back>
+
+  </div>
+</div>

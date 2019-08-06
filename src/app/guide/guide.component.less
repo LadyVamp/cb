@@ -1,0 +1,57 @@
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+p {
+    margin: 0;
+}
+
+.parent_img {
+    display: flex;
+    justify-content: center;
+}
+
+.guide__img {
+    max-height: 250px;
+}
+
+.mat-raised-button {
+    /*кнопка Далее со стрелкой*/
+    padding: 0 5px 0 10px;
+}
+
+.step {
+    min-height: 380px;
+}
+
+.flex-row-btn {
+    margin: 1em 0;
+}
+
+
+@media (min-width: 320px) and (max-width: 374px) {    //iphone 5/SE
+    .guide__img {
+        max-height: 225px;
+    }
+
+    .step {
+        min-height: 345px;
+    }
+}
+
+.arrow_left {
+    background: url("/assets/icons/arrow_left.png") no-repeat;
+    background-position: left center;
+    background-size: 23px;
+    padding: 0.1em 1.5em;
+}
+.arrow_right {
+    background: url("/assets/icons/arrow_right.png") no-repeat;
+    background-position: right center;
+    background-size: 23px;
+    padding: 0.1em 1.6em 0.1em 1em;
+}

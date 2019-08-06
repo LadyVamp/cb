@@ -1,0 +1,83 @@
+.container {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.gray {
+    background-color: lightgray;
+}
+
+h3, p {
+    color: black;
+}
+
+/* .flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.qr {
+    width: 200px;
+    height: 200px;
+}
+
+/* рамка для QR-кода */
+.square {
+    background: white;
+    width: 200px;
+    height: 200px;
+    margin: 5px auto;
+    position: relative;
+
+    &:before {
+        left: 0px;
+        top: 0px;
+        border-width: 5px 0 0 5px;
+        z-index: 100;
+    }
+
+    &:after {
+        right: 0px;
+        top: 0px;
+        border-width: 5px 5px 0 0;
+    }
+}
+
+.border {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+
+    &:before {
+        right: 0px;
+        bottom: 0px;
+        border-width: 0 5px 5px 0;
+    }
+
+    &:after {
+        left: 0px;
+        bottom: 0px;
+        border-width: 0 0 5px 5px;
+    }
+}
+
+.square:before,
+.square:after,
+.border:before,
+.border:after {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    content: '';
+    border-color: red;
+    border-style: solid;
+}
+
+/* /рамка для QR-кода */

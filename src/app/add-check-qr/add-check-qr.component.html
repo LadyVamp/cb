@@ -1,0 +1,18 @@
+<div class="container gray">
+  <div class="content flex-col-center">
+    <h3>Наведите камеру на квадратный код внизу чека</h3>
+    <!-- <div class="square">
+      <div class="border">
+        <img src="./assets/img/ex_qr-code.png" alt="qr" class="qr">
+      </div>
+    </div> -->
+
+    <qr-scanner [debug]="false" [canvasWidth]="1080" [canvasHeight]="720" [stopAfterScan]="true" [updateTime]="500">
+
+    </qr-scanner>
+
+    <br><br>
+    <p>Не сканируется?</p>
+    <button routerLink="/add-check-manually" mat-raised-button>Ввести чек вручную</button>
+  </div>
+</div>

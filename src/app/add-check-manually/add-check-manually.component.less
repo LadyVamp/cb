@@ -1,0 +1,89 @@
+@w100: 100px;
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.example img {
+    height: 170px;
+}
+
+.w80 {
+    width: @w100*0.8;
+}
+.w100 {
+    width: @w100;
+}
+.w120 {
+    width: @w100*1.2;
+}
+
+.ex-flex {
+    display: flex;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+
+    font-size: 0.7rem;
+    p {
+        margin: 0.1em 0.2em;
+    }
+}
+
+.mat-form-field-appearance-legacy {
+    .mat-form-field-infix {
+        padding: 0.2em;
+    }
+
+    .mat-form-field-wrapper {
+        padding-bottom: 1em;
+    }
+
+    .mat-form-field-infix {
+        padding: .3em 0;
+    }
+}
+
+
+/* модальное окно "Чек успешно загружен" */
+.modalbackground {
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.modalwindow {
+    width: 100%;
+    max-width: 65%;
+    margin: 50% auto;
+    padding: 2%;
+    background: #fff;
+    border-radius: 3px;
+
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+
+    p {
+        padding: 0;
+        margin: 4% 0 8% 0;
+    }
+}
+
+.btn_parent {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* /модальное окно "Чек успешно загружен" */

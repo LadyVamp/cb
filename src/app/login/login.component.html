@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="content">
+    <div class="row">
+      <h1>Вход в систему</h1>
+    </div>
+    <div class="row">
+      <form class="login_form" [formGroup]="form" (submit)="onSubmit()">
+        <span *ngIf="message" class="warning">
+          {{message}}
+        </span>
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="logEmail" type="text">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+          <input matInput placeholder="Пароль" formControlName="logPassw" type="password">
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="form.status === 'INVALID'" class="login_text">
+          Введите имя пользователя и пароль
+        </div>
+
+        <button mat-flat-button class="login_btn" type="submit" [disabled]="form.status === 'INVALID'">Войти</button>
+        <br>
+        <button routerLink="/registration" mat-raised-button class="" >Регистрация</button>
+      </form>
+    </div>
+  </div>
+
+</div>

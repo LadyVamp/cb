@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="content">
+    <div class="headerParent" *ngIf='isAuthorized'>
+      <div class="menuitem">
+        <!-- <i class="material-icons">
+          settings_applications
+        </i> -->
+      </div>
+      <!-- <div class="persInfo">
+        <p>Ваши бонусы: {{st.accumulatedCashback}}</p>
+        <p>Чеков в загрузке: {{st.isLoading}} </p>
+      </div> -->
+    </div>
+
+    <div class="searchDiv">
+      <mat-form-field class="searchDiv_searchInput">
+        <div class="search">
+          <input matInput placeholder="Я ищу..." id="searchQuery" autocomplete="off" class="form-control" type="search"
+          name="search" [(ngModel)]="searchText">
+        </div>
+      </mat-form-field>
+    </div>
+
+    <div class="parentAd" *ngIf='!isAuthorized'>
+      <div class="close" (click)="closeAd()"></div>
+      <div class="ad invisible" [ngClass]="{visible: isCloseAd? true : false}">
+        <p>
+          &nbsp;Реклама кредитной карты
+        </p>
+      </div>
+    </div>
+
+    <div class="carouselParent">
+      <h3 class="carouselHeader">Лучшие товары</h3>
+      <div class="carousel scroll">
+        <div class="itemCarousel" *ngFor='let item of items | filter:searchText' [attr.data-id]='item.id' routerLink="/detail/{{item.id}}">
+          <div class="itemCarousel_imageBlock">
+            <div class="parent_img">
+              <img src="{{ item.url }}">
+            </div>
+          </div>
+          <p>{{item.name}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carouselParent">
+      <h3 class="carouselHeader">Новинки</h3>
+      <div class="carousel scroll">
+        <div class="itemCarousel" *ngFor='let item of items | filter:searchText' [attr.data-id]='item.id' routerLink="/detail/{{item.id}}">
+          <div class="itemCarousel_imageBlock">
+            <div class="parent_img">
+              <img src="{{ item.url }}">
+            </div>
+          </div>
+          <p>{{item.name}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class='loginBtnParent' *ngIf='!isAuthorized'>
+      <button routerLink="/login" class="greenBtn" mat-flat-button>Войти в систему</button>
+    </div>
+
+  </div>
+</div>

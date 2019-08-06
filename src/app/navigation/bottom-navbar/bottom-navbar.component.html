@@ -1,0 +1,6 @@
+<div id="bottomNavbar" class="bottomNavbar">
+  <button routerLink="/home" (click)='addClassActive($event)' class="btn homeBtn" [class.active]="isSpecial == 1" data-number='1' mat-flat-button>Главная</button>
+  <button routerLink="/sale" (click)='addClassActive($event)' class="btn saleBtn" [class.active]="isSpecial == 2" data-number='2' mat-flat-button>Акции</button>
+  <button routerLink="/cashback" (click)='addClassActive($event)' class="btn cashbackBtn" [class.active]="isSpecial == 3" data-number='3' mat-flat-button>Кэшбэк</button>
+  <button routerLink="/info" (click)='addClassActive($event)' class="btn infoBtn" [class.active]="isSpecial == 4" data-number='4' mat-flat-button>Инфо</button> 
+</div>

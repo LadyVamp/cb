@@ -1,0 +1,57 @@
+.searchDiv {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.searchDiv_searchInput {
+    width: 100%;
+    input {
+        padding-bottom: 6px;
+    }
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+}
+
+.carouselParent {
+    &:first-child {
+        margin-top: -10px;
+    }
+
+    &:not(:first-child) {
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+}
+
+.carouselHeader {
+    margin: 0 0 15px 0;
+}
+
+.itemCarousel {
+    width: 150px;
+    // height: 300px;
+
+    &:not(:last-child) {
+        margin-right: 20px
+    }
+}
+
+// .itemCarousel_imageBlock {
+//     width: 100px;
+//     height: 100px;
+//     border: black 1px solid;
+// }
+
+.persInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -20px;
+}

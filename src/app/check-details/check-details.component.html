@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="content">
+    <h3>Детализация по чеку #{{item.id}}</h3>
+    <div class="check-details">
+      <div class="check-details__descr">
+        <p class="sum">
+          Сумма {{item.sum}} &#8381;
+        </p>
+        <p class="date">
+          {{item.date}}
+        </p>
+      </div>
+      <div>
+        <p class="status">
+          {{item.status}}
+        </p>
+      </div>
+
+      <button mat-raised-button type="submit" (click)="showModal()" class="delCheckBtn">
+        <span>Удалить чек</span>        
+      </button>
+
+      <div class="flex-col-btn">
+        <button mat-raised-button (click)="showRequisites()">Реквизиты чека</button>
+      </div>
+
+      <!-- Реквизиты чека -->
+      <div class="invisible" [ngClass]="{visible: isVisible? true : false}">
+        <div class="check-details__requisites">
+          <p>
+            ФН: {{item.fn}} <br>
+            ФД: {{item.fd}} <br>
+            ФПД: {{item.fpd}} <br>
+          </p>
+        </div>
+      </div>
+      <!-- /Реквизиты чека -->
+
+    </div>
+
+
+
+    <!-- Модальное окно "Вы действительно хотите удалить чек?"-->
+    <div class="modalbackground invisible" [ngClass]="{visible: isShowModal? true : false}">
+      <div class="modalwindow invisible" [ngClass]="{visible: isShowModal? true : false}">
+        <h3>Вы действительно хотите удалить чек?</h3>
+        <p>Данные чека:</p>
+        <p>
+          id: {{item.id}}<br>
+          ФН: {{item.fn}} <br>
+          ФД: {{item.fd}} <br>
+          ФПД: {{item.fpd}} <br>
+        </p>
+        <div class='btn_parent'>
+          <button mat-flat-button (click)="showModalDelCheck(true,item)" class="yes">Да</button>
+          <button mat-flat-button (click)="showModal()" class="no">Нет</button>
+        </div>
+      </div>
+    </div>
+    <!-- / Модальное окно "Вы действительно хотите удалить чек?-->
+
+    <!-- Модальное окно "Чек удален!"-->
+    <div class="modalbackground invisible" [ngClass]="{visible: isShowModalCheckDeleted? true : false}">
+      <div class="modalwindow invisible" [ngClass]="{visible: isShowModalCheckDeleted? true : false}">
+        <h3>Чек удален!</h3>
+        id: {{item.id}}
+        <div class='btn_parent'>
+          <button mat-flat-button (click)="showModalDelCheck(false)" routerLink="/checklist">ОК</button>
+        </div>
+      </div>
+    </div>
+    <!-- / Модальное окно "Чек удален!"-->
+
+
+    <app-btn-go-back></app-btn-go-back>
+
+  </div>
+</div>

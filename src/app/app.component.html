@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<noscript>
+    Please enable JavaScript to run this application.
+</noscript>
+<router-outlet></router-outlet>
+
+<div *ngIf='isAuthorized'>
+    <app-bottom-navbar></app-bottom-navbar>
+</div>
+
+<div *ngIf='!isAuthorized'>
+    <app-licence></app-licence>
+</div>
+
+<div *ngIf='isAuthorized'>
+    <app-btn-add-check></app-btn-add-check>
+</div>
+

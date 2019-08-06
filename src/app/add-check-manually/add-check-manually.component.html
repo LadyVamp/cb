@@ -1,0 +1,95 @@
+<div class="content">
+  <h3>Новый чек</h3>
+  <form [formGroup]="form" class="flex-col-btn" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <div *ngIf="!isValid" class="warning">
+      Для добавления чека требуется заполнить все поля
+    </div>
+    <table cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="w80">
+            <mat-label>Сумма</mat-label>
+            <!-- либо type, либо maxlength :( -->
+            <input placeholder="00.00" matInput type="text" formControlName="sum" inputmode="numeric" pattern="[0-9]*[.,]?[0-9]+$">
+            <!-- <input placeholder="00.00" matInput formControlName="sum" maxlength="7" autocomplete="off"> -->
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="w120">
+            <mat-label>Дата</mat-label>
+            <input matInput type="date" formControlName="date">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="w80">
+            <mat-label>Время</mat-label>
+            <input matInput type="time" formControlName="time" (onclick)="this.setSelectionRange(0, this.value.length)">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <table>
+      <tr>
+        <td>
+          <mat-form-field class="w100">
+            <mat-label>ФН номер</mat-label>
+            <!-- <input matInput formControlName="fn" autocomplete="off" maxlength="11"> -->
+            <!-- <input matInput type="number" formControlName="fn" autocomplete="off" > -->
+            <input matInput formControlName="fn" autocomplete="off" type="text" inputmode="numeric" pattern="[0-9]*">
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="w100">
+            <mat-label>ФД номер</mat-label>
+            <input matInput  formControlName="fd" autocomplete="off" type="text" inputmode="numeric" pattern="[0-9]*">
+            <!-- <input matInput formControlName="fd" autocomplete="off" maxlength="10"> -->
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="w100">
+            <mat-label>ФПД номер</mat-label>
+            <input matInput  formControlName="fpd" autocomplete="off" type="text" inputmode="numeric" pattern="[0-9]*">
+            <!-- <input matInput formControlName="fpd" autocomplete="off" maxlength="10"> -->
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+    <button mat-flat-button type="submit" (click)="showModal()">Сохранить</button> <br>
+  </form>
+
+  <!-- Модальное окно -->
+  <div *ngIf="isValid" class="modalbackground invisible" [ngClass]="{visible: isShowModal? true : false}">
+    <div class="modalwindow invisible" [ngClass]="{visible: isShowModal? true : false}">
+      <h3>Чек успешно загружен!</h3>
+      <p>Данные чека:<br>
+        ФН: {{this.form.value.fn}} <br>
+        ФД: {{this.form.value.fd}} <br>
+        ФПД: {{this.form.value.fpd}}
+      </p>
+      <div class='btn_parent'>
+        <button mat-flat-button (click)="showModal()">ОК</button>
+      </div>
+    </div>
+  </div>
+  <!-- / Модальное окно -->
+
+  <div class="flex-col-btn">
+    <button mat-raised-button (click)="showExampleCheck()">Пример чека</button>
+  </div>
+
+  <app-btn-go-back></app-btn-go-back>
+
+  <div class="example invisible" [ngClass]="{visible: isVisible? true : false}">
+    <div class="ex-flex">
+      <img src="./assets/img/ex_check.png" alt="check">
+      <!--путь к картинке от корня сервера-->
+      <p>ФН, ФД, ФПД указаны на чеке<br>
+        ФН № – заводской номер фискального накопителя (11 цифр) <br>
+        ФД № – номер фискального документа (10 цифр) <br>
+        ФПД – фискальный признак документа<br>
+      </p>
+    </div>
+  </div>
+
+</div>

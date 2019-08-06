@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="content">
+    <h2>Инфо</h2>
+
+    <div *ngFor="let question of questions">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{question.question}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{question.answer}}</p>
+      </mat-expansion-panel>
+    </div>
+
+    <h3>Условия получения кэшбэка</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit atque aut error numquam quidem quasi expedita
+      accusamus consequatur quia ducimus magni, eaque ex asperiores sint sapiente magnam assumenda explicabo
+      blanditiis! <br>
+      <a href="https://www.rsb.ru/" target="_blank">Все условия</a>
+    </p>
+    <button routerLink="/guide" mat-flat-button>Путеводитель</button>
+
+  </div>
+
+</div>

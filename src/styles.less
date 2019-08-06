@@ -1,0 +1,263 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* палитра, основной #83B143 https://colorscheme.ru/#2t41OjTogw0w0 */
+/* палитра, основной YellowGreen https://colorscheme.ru/#2t41OjTogw0w0*/
+/* названия цветов https://colorscheme.ru/color-names.html */
+// иконки https://material.io/tools/icons/?icon=arrow_right&style=baseline
+
+//Variables
+@yellowGreen: YellowGreen;
+@green: Green;
+@coral: #C14F49;
+@orchid: #A43E6B;
+
+@darkYellowGreen: #5E8510;
+@darkGreen: #25780F;
+@darkCoral: #89111F;
+@darkOrchid: #720E47;
+
+@lightYellowGreen: #C6E686;
+@lightGreen: #94DC80;
+@lightCoral: #E98893;
+@lightOrchid: #D87EB1;
+
+@gray: #949494;
+
+@100: 100px;
+// /Variables
+
+
+
+
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+h1 {
+    font-size: 1.6em;
+}
+h2 {
+    font-size: 1.4em;
+}
+h3 {
+    font-size: 1.2em;
+}
+
+.content {
+    margin: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    overflow-y: auto;
+}
+
+a {
+    color: @green;
+}
+
+.green {
+    color: @green;
+}
+.gray {
+    color: @gray;
+}
+
+.item_imageBlock {
+    padding: 5px;
+    border: 1px solid #bebebe;
+    width: 70px;
+    height: 70px;
+}
+
+// .item {
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+//     align-content: flex-end;
+//     align-items: center;
+// }
+
+
+.itemCarousel_imageBlock { //main-screen, sale
+    width: @100*0.8;
+    height: @100*0.8;
+    border: black 1px solid;
+
+    .parent_img {
+        img {
+            width: @100*0.7;
+            padding: 5px;
+        }
+    }
+
+    p {
+        padding: 5px;
+    }
+}
+
+.warning {
+    /* login, add-check-manually */
+    color: @darkOrchid;
+    background-color: @lightCoral;
+    border-color: @lightCoral;
+    font-size: 0.9em;
+    padding: 0.1em;
+
+    span {
+        i {
+            //иконка предупреждения
+            color: @darkCoral;
+        }
+    }
+
+}
+
+
+.loupe {
+    color: @gray;
+    /* position: absolute;
+    right: 15px; */
+}
+
+/* элементы навигации */
+.mat-flat-button {
+    background: @green;
+    color: white;
+}
+
+
+
+.mat-button {
+    padding: 0 14px;
+}
+
+.bottomNavbar {
+    display: flex;
+    justify-content: center;
+    background: @lightGreen;
+
+    button {
+        background: @lightGreen;
+        color: black;
+    }
+
+    .active {
+        background: @green  !important;
+    }
+}
+
+.addCheckBtn {
+    background-color: @orchid  !important;
+}
+
+.btn_parent {// check-detail: "вы действительно хотите удалить чек?"
+    .yes {
+        background: @coral;
+    }
+    .no {
+        background: @green;
+    }
+}
+
+.delCheckBtn { // check-detail: btn "Удалить чек"
+    i {
+        color: @darkCoral;
+    }
+}
+
+/* /элементы навигации */
+
+
+
+
+/*выделить цветом ползунок*/
+/* https://codepen.io/devstreak/pen/dMYgeO */
+.scroll::-webkit-scrollbar-track {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: @lightYellowGreen;
+    border: 1px solid @lightYellowGreen;
+    border-radius: 10px;
+}
+
+/*/выделить цветом ползунок*/
+
+/*  flex  */
+.flex-col-btn {
+    display: flex;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    // -webkit-flex-direction: column;
+    // -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-row-btn {
+    //guide.
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    // -webkit-flex-direction: row;
+    // -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.flex-col-center {
+    //add-check-qr. разместить блоки-столбцы по центру
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-center {
+    justify-content: center;
+    // -webkit-align-content: center;
+    // -ms-flex-line-pack: center;
+    align-content: center;
+    // -webkit-align-items: center;
+    // -ms-flex-align: center;
+    align-items: center;
+}
+
+
+/*  /flex  */
+
+/*таблица Список чеков*/
+td.mat-cell,
+td.mat-footer-cell,
+th.mat-header-cell {
+    font-size: 0.75em;
+}
+
+
+/* иконки */
+.material-icons { 
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+/* /иконки */
+
+/* медиа-запросы */
+@media (min-width: 320px) and (max-width: 374px) { //iphone 5/SE
+    .content {
+        max-height: 500px; 
+        overflow-x: hidden; //убрать горизонтальную полосу прокрутки
+    }
+}
+/* /медиа-запросы */

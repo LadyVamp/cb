@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="content">
+    <div class="headerParent" *ngIf='isAuthorized'>
+      <div class="menuitem">
+        <i class="material-icons">
+          settings_applications
+        </i>
+      </div>
+      <div class="persInfo">
+        <p>Ваши бонусы: 999</p>
+        <p>7 чеков в загрузке</p>
+      </div>
+    </div>
+
+    <div class="searchDiv">
+      <mat-form-field class="searchDiv_searchInput">
+        <mat-icon matSuffix class="loupe" (click)="search()">search</mat-icon>
+        <input matInput placeholder="Я ищу..." id="searchQuery" autocomplete="off" class="form-control" type="text"
+          name="search" [(ngModel)]="searchText">
+      </mat-form-field>
+    </div>
+
+    <div class="carouselParent">
+      <h3 class="carouselHeader">Акции</h3>
+      <!-- TODO for loupe here for items -->
+      <div class="carousel scroll">
+        <div class="itemCarousel" *ngFor='let item of items | filter:searchText' [attr.data-id]='item.id' routerLink="/detail/{{item.id}}">
+          <div class="itemCarousel_imageBlock">
+            <div class="parent_img">
+              <img src="{{ item.url }}">
+            </div>
+          </div>
+          <p>До {{item.cashback}} %</p>
+          <p>{{item.name}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

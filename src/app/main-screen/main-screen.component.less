@@ -1,0 +1,128 @@
+.searchDiv {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin-top: 0.5em;
+}
+
+.searchDiv_searchInput {
+    width: 100%;
+
+    input {
+        padding-bottom: 6px;
+    }
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.carouselParent {
+    &:first-child {
+        margin-top: -10px;
+    }
+
+    &:not(:first-child) {
+        margin-top: 10px;
+    }
+
+    p {
+        font-size: 0.7em;
+    }
+}
+
+.carouselHeader {
+    margin: 0 0 15px 0;
+}
+
+.itemCarousel {
+    height: 140px;
+    &:not(:last-child) {
+        margin-right: 1em;
+    }
+}
+
+.loginBtnParent {
+    position: fixed;
+    bottom: 15px;
+    left: 30%;
+}
+
+button {
+    // margin-bottom: 30px;
+    margin-bottom: 20%;
+}
+
+.persInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -20px;
+}
+
+
+/* Реклама */
+.parentAd {
+    height: 5em;
+    margin-bottom: 2em;
+    margin-top: -2em;
+}
+.ad {
+    width: 99%;
+    // height: 65px;
+    height: 5em;
+    //contrast, lighten, darken не работают :(
+    // background: desaturate(@lightYellowGreen, 50%); //бледнее на 50%
+    // border: 1px solid saturate(@coral, 50%);//насыщеннее на 50%
+    background: Gainsboro;
+    border: 1px solid darkgray;
+}
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+//крестик Закрыть
+.close {
+    position: relative;
+    left: 89vw;
+    top: 8vw;
+    width: 24px;
+    height: 24px;
+    color: #333;
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: 12px;
+        content: ' ';
+        height: 20px;
+        width: 2px;
+        background-color: white;
+    }
+
+    &::before {
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+    }
+
+}
+
+// /крестик Закрыть
+/* /Реклама */
+
+
+input[type="search"] {
+    background-image: url("/assets/icons/search.png");   
+    background-repeat: no-repeat; /*Убираем повтор изображения*/   
+    background-position: right top; /*правый верхний угол*/
+    background-size: 20px;
+}
